@@ -1,0 +1,89 @@
+<div class="login-box">
+<!-- /.login-logo -->
+	<div class="card card-outline card-primary">
+		<div class="card-header text-center">
+			<span class="h1"><b>Cardi</b>Ammonia
+			</span>
+		</div>
+		<div class="card-body">
+			<p class="login-box-msg">{{'Sign in message' | translate}}</p>
+				<form 
+					name="form"
+					(ngSubmit)="f.form.valid &amp;&amp; onSubmit()" 
+					#f="ngForm"
+					novalidate action="">
+
+						<div class="input-group mb-4">
+							<input type="text" class="form-control"
+								[ngClass]="username.errors &amp;&amp; f.submitted ? 'is-invalid':''"
+								name="username" [(ngModel)]="form.username" required
+								#username="ngModel" placeholder="{{'Username'| translate}}" />
+			
+							<div class="input-group-append">
+								<div class="input-group-text">
+									<span class="fas fa-user"></span>
+								</div>
+							</div>
+							<span 
+								id="exampleInputEmail1-error" 
+								class="error invalid-feedback"
+								*ngIf="username.errors &amp;&amp; f.submitted">
+								{{'Username Required' | translate}}
+							</span>
+						</div>
+						<div class="input-group mb-3">
+			
+							<input type="password" class="form-control" name="password"
+								[(ngModel)]="form.password" required minlength="6"
+								#password="ngModel" placeholder="{{'Password'| translate}}" />
+							<div class="input-group-append">
+								<div class="input-group-text">
+									<span class="fas fa-lock"></span>
+								</div>
+							</div>
+							<span id="exampleInputPassword1-error"
+								class="error invalid-feedback"
+								*ngIf="password.errors &amp;&amp; f.submitted &amp;&amp; password.errors.required"
+								[ngStyle]="{'display': (password.errors &amp;&amp; f.submitted) ? 'block' : 'none'}">
+								{{'Password Required' | translate}}
+							</span> 
+							<span id="exampleInputPassword1-error"
+								class="error invalid-feedback"
+								*ngIf="password.errors &amp;&amp; f.submitted &amp;&amp; password.errors.minlength"
+								[ngStyle]="{'display': (password.errors &amp;&amp; f.submitted) ? 'block' : 'none'}">
+								{{'Invalid Password' | translate}}
+							</span>
+			
+						</div>
+						<div class="row">
+							<div class="col-8"></div>
+							<!-- /.col -->
+							<div class="col-4">
+								<button [disabled]="loading" type="submit" class="btn btn-info btn-block">
+									{{'Sign in'| translate}}
+								</button>
+      								<img *ngIf="loading" 
+      								src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" 
+      								/>
+								
+							</div>
+							<!-- /.col -->
+							<!-- 
+							<span class="form-inline">
+  								<select class="form-control" 
+      								#selectedLang 
+      								(change)="switchLang(selectedLang.value)">
+    								<option *ngFor="let language of translate.getLangs()" 
+      									[value]="language"
+      									[selected]="language === translate.currentLang">
+      									{{ language }}
+    								</option>
+  								</select>
+							</span>
+							 -->
+						</div>
+				</form>
+				
+		</div>
+	<!-- /.card-body -->
+</div>

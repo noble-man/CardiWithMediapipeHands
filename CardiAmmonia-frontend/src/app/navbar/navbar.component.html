@@ -1,0 +1,79 @@
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#/home" class="nav-link">{{'Home' | translate}}</a>
+      </li>
+      <!-- 
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#/home" class="nav-link">Language</a>
+      </li>
+       -->
+       <!-- 
+       <li class="nav-item d-none d-sm-inline-block">
+      		<span class="form-inline">
+  				<select class="form-control" 
+      				#selectedLang 
+      				(change)="switchLang(selectedLang.value)">
+    				<option *ngFor="let language of translate.getLangs()" 
+      					[value]="language"
+      					[selected]="language === translate.currentLang">
+      					{{ language }}
+    				</option>
+  				</select>
+			</span>
+		</li>
+		-->        
+    </ul>
+    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+     <!--  <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li> -->
+       <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-danger navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+			<span class="dropdown-item dropdown-header">15 {{'Alarms' | translate }}</span>
+				<div class="dropdown-divider"></div>
+				<a href="#" class="dropdown-item">
+					<i class="fas fa-flask mr-2"></i> 4 {{'New Alarms' | translate }}
+					<span class="float-right text-muted text-sm">3 {{'mins' | translate }}</span>
+				</a>
+			<div class="dropdown-divider"></div>
+				<a href="#" class="dropdown-item">
+					<i class="fas fa-radiation mr-2"></i> 8 {{'New Alarms' | translate }}
+					<span class="float-right text-muted text-sm">12 {{'mins' | translate }}</span>
+				</a>
+			<div class="dropdown-divider"></div>
+				<a href="#" class="dropdown-item">
+					<i class="fas fa-bookmark mr-2"></i> 3 Q.C.{{'Alarms' | translate }}
+					<span class="float-right text-muted text-sm">15 {{'mins' | translate }}</span>
+				</a>
+			<div class="dropdown-divider"></div>
+				<a href="#" class="dropdown-item dropdown-footer">{{'See First Interlocks' | translate }}</a>
+		</div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"  (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i><!--{{'Log out' | translate }}-->
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+  

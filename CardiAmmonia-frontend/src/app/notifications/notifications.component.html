@@ -1,0 +1,31 @@
+<!-- Notifications -->
+
+<div id="toastsContainerTopRight" class="toasts-top-right fixed">
+		<ngb-alert #selfClosingAlert *ngIf="message" type="custom"
+			(closed)="message=''" 
+			[ngClass]="{ 'toast': true,
+						 'fade':true,
+						 'show':true,
+						 'alert': message, 
+						 'alert-success': message.type === 'success', 
+						 'alert-info': message.type === 'info', 
+						 'alert-warning': message.type === 'warning', 
+						 'alert-primary': message.type === 'primary', 
+						 'alert-secondary': message.type === 'secondary', 
+						 'alert-light': message.type === 'light', 
+						 'alert-dark': message.type === 'dark', 
+						 'alert-danger': message.type === 'error' }"
+			class="toast fade show"
+			style="padding:0px"> 
+	
+			<div class="toast-header">
+				<strong class="mr-auto">{{ message.type }}</strong>
+				<small>{{'Dismiss' | translate}}</small>
+	
+			</div>
+			<div class="toast-body">
+				{{ message.text }}
+			</div>
+	
+		</ngb-alert>
+</div>

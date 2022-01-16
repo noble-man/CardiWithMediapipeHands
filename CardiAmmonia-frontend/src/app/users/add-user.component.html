@@ -1,0 +1,49 @@
+<!-- <div class="col-md-12">
+  <div class="card card-container">
+ <form [formGroup]='addUserForm' (ngSubmit)="onSubmit()">
+       <div class="form-group">
+         <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          formControlName="username"
+          required
+          minlength="3"
+          maxlength="20"
+        />
+         
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          formControlName="password"
+          required
+          minlength="6"
+        />
+        
+      </div>
+      
+      <div class="form-group">
+        <div *ngFor="let role of this.roles.controls; let i=index;">
+       		<input type="checkbox" [formControl]="role"/>{{rolesList[i].description}}
+       	</div>
+     </div>
+         
+      <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit" [disabled]="!addUserForm.valid">Add User</button>
+      </div>
+
+ </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      The user is added successfully.
+    </div>
+  </div>
+</div>
+ -->
+ 
+ 

@@ -1,0 +1,57 @@
+{"properties": [
+  {
+    "name": "cardiAmmonia.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'cardiAmmonia.app.jwtSecret'"
+  },
+  {
+    "name": "cardiAmmonia.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'cardiAmmonia.app.jwtExpirationMs'"
+  },
+  {
+    "name": "use.cyclone.server.simulator",
+    "type": "java.lang.String",
+    "description": "A description for 'use.cyclone.server.simulator'"
+  },
+  {
+    "name": "opcua.server.cyclone.url",
+    "type": "java.lang.String",
+    "description": "A description for 'opcua.server.cyclone.url'"
+  },
+  {
+    "name": "use.dispensing.server.simulator",
+    "type": "java.lang.String",
+    "description": "A description for 'use.dispensing.server.simulator'"
+  },
+  {
+    "name": "opcua.server.dispensing.url",
+    "type": "java.lang.String",
+    "description": "A description for 'opcua.server.dispensing.url'"
+  },
+  {
+    "name": "use.dosecalibrator.server.simulator",
+    "type": "java.lang.String",
+    "description": "A description for 'use.dosecalibrator.server.simulator'"
+  },
+  {
+    "name": "opcua.server.dosecalibrator.url",
+    "type": "java.lang.String",
+    "description": "A description for 'opcua.server.dosecalibrator.url'"
+  },
+  {
+    "name": "use.qc.server.simulator",
+    "type": "java.lang.String",
+    "description": "A description for 'use.qc.server.simulator'"
+  },
+  {
+    "name": "opcua.server.qc.url",
+    "type": "java.lang.String",
+    "description": "A description for 'opcua.server.qc.url'"
+  },
+  {
+    "name": "cardiAmmonia.recipe",
+    "type": "java.lang.String",
+    "description": "A description for 'cardiAmmonia.recipe'"
+  }
+]}

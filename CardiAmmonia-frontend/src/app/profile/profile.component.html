@@ -1,0 +1,210 @@
+<!-- <div class="container" *ngIf="currentUser; else loggedOut">
+  <header class="jumbotron">
+    <h3>
+      <strong>{{ currentUser.username }}</strong> Profile
+    </h3>
+  </header>
+  <p>
+    <strong>Token:</strong>
+    {{ currentUser.accessToken.substring(0, 20) }} ...
+    {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
+  </p>
+  <p>
+    <strong>Email:</strong>
+    {{ currentUser.email }}
+  </p>
+  
+  <strong>Roles:</strong>
+  <ul>
+    <li *ngFor="let role of currentUser.roles">
+      {{ role }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
+ -->
+ 
+ 
+ <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+ <!-- Content Header (Page header) -->
+	<div class="content-header">
+		<div class="container-fluid">
+	       <div class="row mb-2">
+	         <div class="col-sm-6">
+	           <h1>{{'User Profile' | translate }}</h1>
+	         </div>
+	         <div class="col-sm-6">
+	           <ol class="breadcrumb float-sm-right">
+	             <li class="breadcrumb-item"><a href="#">{{'Home'| translate}}</a></li>
+	             <li class="breadcrumb-item active">{{'Sub-Batch Production'| translate}}</li>
+	           </ol>
+	         </div>
+	       </div>
+	     </div>
+	</div>
+	<!-- /.content-header -->
+ 
+	<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			 <div class="row">
+				 <div class="col-md-3">
+				 
+					 <!-- Profile Image -->
+					 <div class="card card-primary card-outline">
+					   <div class="card-body box-profile">
+					     <div class="text-center">
+					       <img class="profile-user-img img-fluid img-circle"
+					            src="assets/nurse-technologist.png"
+					            alt="User profile picture">
+					     </div>
+					
+					     <h3 class="profile-username text-center">Marie Wirth</h3>
+					
+					     <p class="text-muted text-center">{{'Technologist'| translate}}</p>
+					
+					     <ul class="list-group list-group-unbordered mb-3">
+					       <li class="list-group-item">
+					         <b>{{'Username'| translate}}</b> <span class="float-right">marw01</span>
+					       </li>
+					       <li class="list-group-item">
+					         <b>{{'Password'| translate}}</b> <span class="float-right">****</span>
+					       </li>
+					       <li class="list-group-item">
+					         <b>{{'Running Productions'| translate}}</b> <span class="float-right">2</span>
+					       </li>
+					     </ul>
+					
+					     <a class="btn btn-primary btn-block"><b>Lorem Ipsum</b></a>
+					   </div>
+					   <!-- /.card-body -->
+					 </div>
+					 <!-- /.card -->
+				 </div>
+				 <!-- /.col -->
+				 
+				 <div class="col-md-9">
+				 <div class="card card-outline card-primary">
+				<div class="card-header p-2">
+                	<ul class="nav nav-pills">
+                  		<li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">{{'Settings'| translate}}</a></li>
+                  		<li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">{{'Actions Log'| translate}}</a></li>
+                	</ul>
+              	</div><!-- /.card-header -->
+				  <div class="card-body">
+				 	<div class="tab-content">
+				 	
+				 		
+						 <div class="tab-pane" id="settings">
+		                    <form class="form-horizontal">
+		                      <div class="form-group row">
+		                        <label for="inputName" class="col-sm-2 col-form-label">{{'Name'| translate}}*</label>
+		                        <div class="col-sm-10">
+		                          <input type="email" class="form-control" id="inputName" placeholder="Name">
+		                        </div>
+		                      </div>
+		                      <div class="form-group row">
+		                        <label for="inputUsername" class="col-sm-2 col-form-label">{{'Username'| translate}}*</label>
+		                        <div class="col-sm-10">
+		                          <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+		                        </div>
+		                      </div>
+		                      <div class="form-group row">
+		                        <label for="inputPassword" class="col-sm-2 col-form-label">{{'Password'| translate}}*</label>
+		                        <div class="col-sm-10">
+		                          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+		                        </div>
+		                      </div>
+		                      
+		                      <div class="form-group row">
+		                        <label for="inputPassword2" class="col-sm-2 col-form-label">{{'Password'| translate}}*</label>
+		                        <div class="col-sm-10">
+		                          <input type="password" class="form-control" id="inputPassword2" placeholder="Confirm Password">
+		                        </div>
+		                      </div>
+		                      
+		                      <div class="form-group row">
+		                        <label for="inputExperience" class="col-sm-2 col-form-label">{{'Photo'| translate}}</label>
+		                        <div class="col-sm-10">
+		                          <small>[TO DO]</small>
+		                        </div>
+		                      </div>
+		                	
+		                		
+		                	  <div class="form-group row">
+		                        <label for="inputRole" class="col-sm-2 col-form-label">{{'Role'| translate}}*</label>
+		                        <div class="col-sm-3">
+		                          <select class="form-control">
+		                          <!-- <option>Nurse</option> -->
+		                          <option>{{'Technologist'| translate}}</option>
+		                          <option>{{'Radiopharmacist'| translate}}</option>
+		                          <option>{{'Technician'| translate}}</option>
+		                        </select>
+		                        </div>
+		                      </div>	
+		          	      		
+		                      <!--  <div class="form-group row">
+		                        <label for="inputLanguage" class="col-sm-2 col-form-label">Language*</label>
+		                        <div class="col-sm-3">
+		                          <select class="form-control">
+		                          <option>English</option>
+		                          <option>Français</option>
+		                          <option>Nederlands</option>
+		                        </select>
+		                        </div>
+		                      </div> -->
+		                         
+		                      <div class="form-group row">
+		                        <div class="offset-sm-2 col-sm-10">
+		                          <button type="submit" class="btn btn-primary">{{'Submit'| translate}}</button>
+		                        </div>
+		                      </div>
+		                    </form>
+		                  </div>
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  
+		                  <div class="tab-pane" id="activity">
+		                    <form class="form-horizontal">
+		                      
+		                      <div class="form-group row">
+		                        <label for="inputExperience" class="col-sm-2 col-form-label">SOPs</label>
+		                        <div class="col-sm-10">
+		                          <small>[TO DO]</small>
+		                        </div>
+		                      </div>
+		                	     		
+		                      
+		                         
+		                      <div class="form-group row">
+		                        <div class="offset-sm-2 col-sm-10">
+		                          <button type="submit" class="btn btn-primary">{{'Submit'| translate}}</button>
+		                        </div>
+		                      </div>
+		                    </form>
+		                  </div>
+		                  
+		                  
+		                  
+		                  
+		                  
+				 		</div>
+				 
+				 </div>
+					</div>
+					</div>
+				 <!-- /.col -->
+				 
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container-fluid -->
+	</section>
+</div>

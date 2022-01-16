@@ -1,0 +1,15 @@
+package be.lilab.uclouvain.cardiammonia.application.authentication;
+
+public enum EPermission {
+	START_END_BATCH,
+	PAUSE_STOP_RESUME_SUBBATCH,
+	MONITOR,
+	QP_RELAESE_QUERY_QC_HISTORY,
+	ENCODE_QC_RESULT,
+	VIEW_BATCH_RECORD,
+	SEND_TO_WASTE,
+	START_SUBBATCH,
+	ROUTE_TO_QC,
+	MANAGE_USERS,
+	MANAGE_PROFILE
+}

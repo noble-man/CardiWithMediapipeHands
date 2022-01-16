@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>CardiAmmonia</title>
+		<base href="/">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<link rel="icon" type="image/x-icon" href="assets/logo-iba.png">-->
+		<link rel="icon" type="image/x-icon" href="#">		
+		<!-- Google Font: Source Sans Pro -->
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+		
+		<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+	
+	    <script src="https://cdn.jsdelivr.net/npm/robotjs@0.6.0/index.min.js"></script>
+	    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&display=swap" rel="stylesheet">
+	    
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>  
+	</head>
+
+	<body class="hold-transition sidebar-mini">
+		<app-root></app-root>
+		
+		<!-- POINT & CLICK GESTURE RECOGNIZER-->
+		<aside class="control-sidebar control-sidebar-dark" style="bottom: 57px; top: 57px; height: 170px; display: none;">
+ 
+  				<div class="os-scrollbar-corner">
+  				
+  					<div class="card" style="width: 100%;">
+						<video class="input_video" style="width: 18rem; display:none"></video>
+    					<canvas class="output_canvas" width="1280px" height="920px"></canvas>
+    		
+					</div>
+  				
+  				</div>
+  			</div>
+  		</aside>
+		
+		
+		
+		
+
+		<script type="module">
+    		const videoElement = document.getElementsByClassName('input_video')[0];
+    		const canvasElement = document.getElementsByClassName('output_canvas')[0];
+    		const canvasCtx = canvasElement.getContext('2d');
+
+    		function onResults(results) {
+        		canvasCtx.save();
+        		canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+        		canvasCtx.drawImage(
+            		results.image, 0, 0, canvasElement.width, canvasElement.height);
+        		if (results.multiHandLandmarks) {
+            		for (const landmarks of results.multiHandLandmarks) {
+                		drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
+                    	{color: '#00FF00', lineWidth: 5});
+                		drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
+
+		                //---
+		                
+		
+		                //CHECK GESTURE
+		                //console.log("landmarks: " + JSON.stringify(landmarks[4]));
+		                var thumpTip = landmarks[4];
+		                var indexTip = landmarks[8];
+		                var middelFingerTip = landmarks[12];
+		                var dX_point = Math.abs(indexTip.x - thumpTip.x);
+		                var dY_point = Math.abs(indexTip.y - thumpTip.y);
+		                //console.log("dX: " + dX);
+		                var dX_click = Math.abs(middelFingerTip.x - thumpTip.x);
+		                var dY_click = Math.abs(middelFingerTip.y - thumpTip.y);
+		                console.log("dX_click: " + dX_click);
+		                console.log("dY_click: " + dY_click);
+		                
+		                if(dX_click < 0.07 && dY_click < 0.07)
+		                //if (dX_point < 0.05 && dY_point < 0.05)
+		                {
+		                    // SEND AN EVENT
+		                       const event = new CustomEvent('PinchGesturePerformed', {
+		                            detail: {
+		                                gesture: 'pinch',
+		                                x: thumpTip.x,
+		                                y: thumpTip.y
+		                            },
+		                        });
+		                        window.dispatchEvent(event);
+		                        
+		                        if (dX_point < 0.038 && dY_point < 0.038)
+		                        //if(dX_click < 0.03 && dY_click < 0.03)
+		                        {
+									   console.log("middle finger joined");
+									 // SEND AN EVENT
+				                       const event = new CustomEvent('ClickGesturePerformed', {
+				                            detail: {
+				                                gesture: 'click',
+				                                x: thumpTip.x,
+				                                y: thumpTip.y
+				                            },
+				                        });
+				                        window.dispatchEvent(event);
+				
+									
+								}
+		                    
+		
+		
+		                    /* MOVE THE MOUSE ACROSS THE SCREEN AS A SINE WAVE.
+		                    var robot = require("robotjs");
+
+							// Speed up the mouse.
+							robot.setMouseDelay(2);
+							
+							var twoPI = Math.PI * 2.0;
+							var screenSize = robot.getScreenSize();
+							var height = (screenSize.height / 2) - 10;
+							var width = screenSize.width;
+							
+							for (var x = 0; x < width; x++)
+							{
+							    y = height * Math.sin((twoPI * x) / width) + height;
+							    robot.moveMouse(x, y);
+							}
+							*/		
+		
+		                    //console.log("Pinch gesture performed !");
+		                }
+		
+		                //---- modal-content
+		
+		
+		            }
+		        }
+		        canvasCtx.restore();
+		    }
+		
+		    const hands = new Hands({locateFile: (file) => {
+		            return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+		        }});
+		    hands.setOptions({
+		        maxNumHands: 2,
+		        modelComplexity: 1,
+		        minDetectionConfidence: 0.5,
+		        minTrackingConfidence: 0.5
+		    });
+		    hands.onResults(onResults);
+		
+		    const camera = new Camera(videoElement, {
+		        onFrame: async () => {
+		            await hands.send({image: videoElement});
+		        },
+		        width: 1280,
+		        height: 720
+		    });
+		    camera.start();
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script type="text/javascript" src="assets/dataTables.buttons.min.js" defer></script>
+ 		<!--<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>-->
+	</body>
+</html>

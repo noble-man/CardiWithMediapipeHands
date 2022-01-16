@@ -1,0 +1,425 @@
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+<div class="content-header">
+	<div class="container-fluid">
+       <div class="row mb-2">
+         <div class="col-sm-6">
+           <h1>{{'Sub-Batches' | translate}}</h1>
+         </div>
+         <div class="col-sm-6">
+           <ol class="breadcrumb float-sm-right">
+             <li class="breadcrumb-item"><a href="#">{{'Home' | translate}}</a></li>
+             <li class="breadcrumb-item active">{{'Sub-Batches' | translate}}</li>
+           </ol>
+         </div>
+       </div>
+     </div>
+</div>
+	<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+	<div class="container-fluid">
+		
+		<!-- Main row -->
+		<div class="row">
+		</div><!-- /.main row -->
+		<div class="card card-outline card-primary">
+              <div class="card-header">
+                <h3 class="card-title"> {{'Sub-Batches' | translate}}</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                
+                
+                	<table datatable class="row-border hover">
+					  <thead>
+					    <tr>
+					      <th>Sub-BatchID</th>
+					      <th>Start At:</th>
+					      <th>End Time:</th>
+					      <th>State</th>
+					      <th>User</th>
+					      <th>Recipe</th>
+					      <th>Assignment</th>
+					      <th>Actual Activity</th>
+					      <th>{{'Q.C. Result' | translate}}</th>
+					      <th></th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>11011054</td>
+					      <td>10:00</td>
+					      <td>10:20</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Paused</span>
+                      	  </td>
+					      <td>Bar</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>12 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-success">Q.C. Passed</span>
+                      	  </td>
+					      <td>
+			               	<div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	 </td>
+					    </tr>
+					    <tr>
+					      <td>22048123</td>
+					      <td>10:30</td>
+					      <td>10:50</td>
+					      <td class="project-state">
+                          	<span class="badge badge-success">Q.C. Approved</span>
+                          </td>
+					      <td>Youknow</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>11 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-success">Q.C. Passed</span>
+                      	  </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>39222048</td>
+					      <td>13:00</td>
+					      <td>13:20</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Paused</span>
+                      	  </td>
+					      <td>Wirth</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>11.5 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-success">Q.C. Passed</span>
+                      	  </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>43222048</td>
+					      <td>13:30</td>
+					      <td>13:50</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Paused</span>
+                      	  </td>
+					      <td>Skywalker</td>
+					      <td>Recipe</td>
+					      <td>To Q.C.</td>
+					      <td>13.5 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-danger">Q.C. Failed</span>
+                      	  </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>53248220</td>
+					      <td>11:00</td>
+					      <td>11:20</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Running</span>
+                          </td>
+					      <td>Dupont</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>13 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-danger">Q.C. Failed</span>
+                      	  </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>61232020</td>
+					      <td>14:00</td>
+					      <td>14:20</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Running</span>
+                      	  </td>
+					      <td>Obama</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>12.6 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-danger">Q.C. Failed</span>
+                      	  </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>71326232</td>
+					      <td>11:30</td>
+					      <td>11:50</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Running</span>
+                          </td>
+					      <td>Holland</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>11 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-danger">Q.C. Failed</span>
+                      	  </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>89626623</td>
+					      <td>12:00</td>
+					      <td>12:20</td>
+					      <td class="project-state">
+                          	<span class="badge badge-danger">Canceled</span>
+                          </td>
+					      <td>Popo</td>
+					      <td>Recipe</td>
+					      <td>To Q.C.</td>
+					      <td>14.2 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Passed P1  </span>
+                          </td>
+					      <td>
+			               <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>91623623</td>
+					      <td>12:30</td>
+					      <td>12:50</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Running</span>
+                      	  </td>
+					      <td>Norris</td>
+					      <td>Recipe</td>
+					      <td>To Q.C.</td>
+					      <td>10.5 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Passed P1  </span>
+                      	  </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>10631062</td>
+					      <td>15:00</td>
+					      <td>15:20</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Running</span>
+                      	  </td>
+					      <td>Robin</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>10  mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Passed P1  </span>
+                          </td>
+					      <td>
+			                <div class="btn-group">
+                				<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+                				
+            				</div>
+	                  	</td>
+					    </tr>
+					    <tr>
+					      <td>11106062</td>
+					      <td>15:30</td>
+					      <td>15:50</td>
+					      <td class="project-state">
+                          	<span class="badge badge-danger">Canceled</span>
+                      	  </td>
+					      <td>Lin</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>12.5  mCi</td>    
+					      <td class="project-state">
+                          	<span class="badge badge-warning">Passed P1  </span>
+                          </td>
+					      <td>	
+					      	<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+	                  	 </td>
+					    </tr>
+					    <tr>
+					      <td>11921062</td>
+					      <td>16:00</td>
+					      <td>16:20</td>
+					      <td class="project-state">
+                          	<span class="badge badge-success">Q.C. Approved</span>
+                          </td>
+					      <td>Link</td>
+					      <td>Recipe</td>
+					      <td>To Syringe</td>
+					      <td>14 mCi</td>
+					      <td class="project-state">
+                          	<span class="badge badge-success">Q.C. Passed</span>
+                      	  </td>
+					      <td>	
+					      	<a class="btn btn-info float-left" (click)="viewDetails(details)"><i class="fas fa-file"></i> {{'Production Data' | translate}}</a>
+	                  	 </td>
+					    </tr>
+					  </tbody>
+				</table>
+                
+                
+              </div>
+              <!-- /.card-body -->
+            	
+            </div>
+            <!-- /.card -->
+			
+	</div><!--/. container-fluid -->
+
+
+	 <ng-template #details let-modal>
+            	<!--
+				  <div class="modal-header">
+				    <h4 class="modal-title" id="modal-basic-title">Details</h4>
+				    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+				      <span aria-hidden="true">&times;</span>
+				    </button>
+				  </div>
+				 -->
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+			<div class="card" id="listOfBatches">
+              <div class="card-header">
+                <h3 class="card-title">Production Data</h3>
+                     
+                   <div class="card-tools">
+	                  <ul class="pagination pagination-sm float-right">
+	                    <li class="page-item"><a class="page-link" >«</a></li>
+	                    <li class="page-item"><a class="page-link" >1</a></li>
+	                    <li class="page-item"><a class="page-link" >2</a></li>
+	                    <li class="page-item"><a class="page-link" >3</a></li>
+	                    <li class="page-item"><a class="page-link" >»</a></li>
+	                  </ul>
+                	</div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>Sub-BatchID</th>
+                      <th>BatchID</th>
+                      <th>User</th>
+                      <th>Parameter</th>
+                      <th>Param. Value</th>
+                      <th>Device</th>
+                      <th>Start-Time</th>
+                      <th>State</th>
+                      <th>Recipe</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>SB-183219752</td>
+                      <td>B-100219752</td>
+                      <td>John Doe</td>
+                      <td>ParamX</td>
+                      <td>ValueX</td>
+                      <td>Cyclone</td>   
+                      <td>11:20</td>
+                      <td><span class="tag tag-success">Approved</span></td>
+                      <td>Bacon ipsum</td>
+                    </tr>
+                    <tr>
+                      <td>SB-657219219</td>
+                      <td>B-670859219</td>
+                      <td>A. Pierce</td>
+                      <td>ParamX</td>
+                      <td>ValueX</td>
+                      <td>Cyclone</td>  
+                      <td>12:20</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>ipsum dolor</td>
+                    </tr>
+                    <tr>
+                      <td>SB-657219752</td>
+                      <td>B-04959752</td>
+                      <td>Bob Doe</td>
+                      <td>ParamX</td>
+                      <td>ValueX</td>
+                      <td>Cyclone</td>  
+                      <td>13:15</td>
+                      <td><span class="tag tag-primary">Approved</span></td>
+                      <td>sit amet.</td>
+                    </tr>
+                    <tr>
+                      <td>SB-198719052</td>
+                      <td>B-107519752</td>
+                      <td>Mike Doe</td>
+                      <td>ParamX</td>
+                      <td>ValueX</td>
+                      <td>Cyclone</td>  
+                      <td>14:30</td>
+                      <td><span class="tag tag-danger">Denied</span></td>
+                      <td>Bacon ipsum</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  <div class="modal-footer">
+				    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Close</button>
+				  </div>
+			</ng-template>
+
+</section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+

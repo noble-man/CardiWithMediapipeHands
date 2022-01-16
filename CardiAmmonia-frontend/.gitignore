@@ -1,0 +1,7 @@
+/static/
+/target/
+/node/
+/node_modules/
+/.settings/
+/.classpath
+/bin/

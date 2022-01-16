@@ -1,0 +1,108 @@
+{
+    "Sitetitle": "CardiAmmonia",
+    
+    "__labels for LOGIN":"** This is a comment. DO NOT USE! ***",
+    
+    "Sign in message" : "Sign in to start your session",
+    "Name": "Name",
+    "Username": "Username",
+    "Email": "Email address",
+    "Password": "Password",
+    "Submit": "Submit",
+    "Sign in":"Sign in",
+    "User Profile" : "User Profile",
+    "Username Required" : "Please enter username",
+    "Password Required" : "Password is required ",
+    "Invalid Password" : "Password must be at least 6 characters ",
+    
+    
+    
+    "__labels for NAVBAR":"** This is a comment. DO NOT USE! ***",
+    
+    "Home" : "Home",
+    "Log out" : "Log out",
+    "New Alarms" : "New Alarm(s)",
+    
+    
+    "__labels for NOTIFICATIONS":"** This is a comment. DO NOT USE! ***",
+    
+    "Dismiss" : "Dismiss",
+    
+      
+    "__labels for PRODUCTION":"** This is a comment. DO NOT USE! ***",
+    
+    "Process control" : "Process control",
+    "Start" : "Start",
+    "Pause" : "Pause",
+    "Stop" : "Stop",
+    "Cancel" : "Cancel",
+    "Discard" : "Discard",
+    "To Waste" : "To Waste",
+    "Syringe" : "Syringe",
+    "ready" : "ready",
+    "Activity" : "Activity",
+    "Formulation" : "Formulation",
+    "Q.C." : "Q.C.",
+    
+    
+    
+     "__labels for PROFILE":"** This is a comment. DO NOT USE! ***",
+   
+    "Running Productions" : "Running Productions",
+    "Actions Log" : "Actions Log",
+    "Photo" : "Photo",
+    "Role" : "Role",
+    "Technologist" : "Technologist",
+    "Radiopharmacist" : "Radiopharmacist",
+    "Technician" : "Technician",
+    
+    
+    
+    "__labels for SIDEBAR":"** This is a comment. DO NOT USE! ***",
+    
+    "Production" : "Production",
+    "Schedule" : "Schedule",
+    "Sub-Batch Production" : "Sub-Batch Production",
+    "Batch Management" : "Batch Management",
+    "Maintenance" : "Maintenance",
+    "Users" : "Users",
+    "Settings" : "Settings",
+    "Quality Control" : "Quality Control",
+    "System parameters" : "System parameters",
+    
+    
+    
+     "__labels for SCHEDULE":"** This is a comment. DO NOT USE! ***",
+    
+    "Scheduled Productions" : "Scheduled Productions",
+    "Production Id" : "Production Id",
+    "Start-time" : "Start-time",
+    "End-time" : "End-time",
+    "Recipe" : "Recipe",
+    "Alarms" : "Alarms",
+    "Dilution" : "Dilution",
+    "Loading target" : "Loading the target",
+    "Dispensing" : "Dispensing",
+    "See First Interlocks" : "First Interlocks",
+    "Desired Activity" : "Desired Activity",
+    "Import Schedule" : "Import Schedule",
+    
+    
+    "View" : "View",
+    "Update" : "Update",
+    "Delete" : "Delete",
+    "Actions" : "Actions",
+    "Action" : "Action",
+    "Add New" : "Add New",
+    "See More" : "More",
+    "Status" :"Status",
+    "User" : "User",
+    "Current Task" : "Current Task",
+    "Progress" : "Progress",
+    "Go To Production" : "Go To Production",
+    
+    "hours" : "hours",
+    "mins" : "mins"
+    
+       
+}

@@ -1,0 +1,57 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentUser" class="edit-form">
+    <h4>User</h4>
+ <form [formGroup]='addUserForm'>
+       <div class="form-group">
+         <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          formControlName="username"
+          minlength="3"
+          maxlength="20"
+          readonly
+        />
+         
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          formControlName="password"
+          required
+          minlength="6"
+        />
+        
+      </div>
+      
+      <div class="form-group">
+        <div *ngFor="let role of this.roles.controls; let i=index;">
+       		<input type="checkbox" [formControl]="role"/>{{rolesList[i].description}}
+       	</div>
+     </div>
+         
+ 	</form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteUser()">
+      Delete User
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateUser()"
+    >
+      Update User
+    </button>
+    <p  style="background-color: antiquewhite;">{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentUser">
+    <br />
+    <p  style="background-color: antiquewhite;">Cannot access this user...</p>
+  </div>
+</div>
